@@ -39,14 +39,18 @@ ${chalk.blue(`Do you want to save it to ${program.output}?`)} [Y/n]`, (answer) =
         }
 
         console.log("The file was saved!");
+        process.exit();
       });
     }
     else {
       console.log('Ok, not saving.');
+      process.exit();
     }
     rl.close();
   });
 }
 else {
   console.log("Please enter a domain and recipient.");
+  program.outputHelp();
+  process.exit(1);
 }  
